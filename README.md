@@ -22,6 +22,14 @@ index.html  … 単一ファイルのランディングページ（CSS 内蔵）
 
 https://katzkawai.github.io/kklab-deepseek-v4-site/
 
+## ローカルでの確認方法
+
+```sh
+python3 -m http.server 8000
+```
+
+ブラウザで http://localhost:8000 を開いてください。
+
 ## 更新履歴
 
 | 日付 | 内容 |
