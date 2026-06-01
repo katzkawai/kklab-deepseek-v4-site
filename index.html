@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>浜名湖うなぎ | Hamanako Unagi</title>
+  <style>
+    :root {
+      --brown: #5D3A1A;
+      --gold: #D4A04A;
+      --dark: #2C1810;
+      --light: #FFF8F0;
+      --accent: #C0392B;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Hiragino Sans", "Noto Sans JP", sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.8;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+                  url('https://images.unsplash.com/photo-1553621042-f6e147245754?w=1200') center/cover no-repeat;
+      height: 100vh; min-height: 480px;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      text-align: center; color: #fff; padding: 2rem;
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 6vw, 5rem);
+      letter-spacing: 0.08em;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+    }
+    .hero h1 span { color: var(--gold); }
+    .hero p {
+      font-size: clamp(1rem, 2vw, 1.4rem);
+      margin-top: 1rem; opacity: 0.9;
+    }
+
+    /* Nav */
+    nav {
+      position: fixed; top: 0; width: 100%;
+      background: rgba(44,24,16,0.85); backdrop-filter: blur(8px);
+      padding: 0.8rem 2rem; z-index: 100;
+      display: flex; justify-content: center; gap: 2rem;
+    }
+    nav a {
+      color: #fff; text-decoration: none; font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--gold); }
+
+    /* Sections */
+    section { padding: 5rem 2rem; max-width: 960px; margin: 0 auto; }
+    h2 {
+      font-size: 2rem; margin-bottom: 2rem; position: relative;
+      display: inline-block;
+    }
+    h2::after {
+      content: ''; position: absolute; bottom: -6px; left: 0;
+      width: 60%; height: 3px; background: var(--gold);
+    }
+
+    /* About */
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 2rem; align-items: center;
+    }
+    .about-grid img {
+      width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+    @media (max-width: 640px) { .about-grid { grid-template-columns: 1fr; } }
+
+    /* Features */
+    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 1.5rem; }
+    .feature-card {
+      background: #fff; border-radius: 12px; padding: 1.8rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08); text-align: center;
+      transition: transform 0.2s;
+    }
+    .feature-card:hover { transform: translateY(-4px); }
+    .feature-card .icon { font-size: 2.8rem; margin-bottom: 0.6rem; }
+    .feature-card h3 { color: var(--brown); margin-bottom: 0.5rem; }
+
+    /* Menu */
+    .menu-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+      gap: 1.5rem;
+    }
+    .menu-item {
+      background: #fff; border-radius: 12px; overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08); text-align: center;
+    }
+    .menu-item img {
+      width: 100%; height: 180px; object-fit: cover;
+    }
+    .menu-item .info { padding: 1rem; }
+    .menu-item h4 { color: var(--brown); }
+    .menu-item .price { color: var(--accent); font-weight: bold; margin-top: 0.3rem; }
+
+    /* Map */
+    .map-container {
+      border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+      margin-top: 1rem;
+    }
+    .map-container iframe { width: 100%; height: 360px; border: 0; display: block; }
+
+    /* Footer */
+    footer {
+      background: var(--dark); color: #aaa; text-align: center;
+      padding: 3rem 2rem; font-size: 0.85rem;
+    }
+    footer strong { color: #fff; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#about">浜名湖うなぎとは</a>
+    <a href="#features">特徴</a>
+    <a href="#menu">メニュー</a>
+    <a href="#access">アクセス</a>
+  </nav>
+
+  <header class="hero">
+    <h1>浜名湖<span>うなぎ</span></h1>
+    <p>静岡・浜名湖が育む、至福の一滴 — 日本一のうなぎをあなたに</p>
+  </header>
+
+  <section id="about">
+    <h2>浜名湖うなぎとは</h2>
+    <div class="about-grid">
+      <img src="https://images.unsplash.com/photo-1615361200141-f45040f367be?w=600" alt="うな重" loading="lazy">
+      <div>
+        <p>浜名湖は静岡県西部に位置する汽水湖。海水と淡水が混じり合う豊かな生態系が、うなぎの成育に最適な環境を生み出しています。</p>
+        <p style="margin-top:1rem;">江戸時代から続く養殖の歴史と、温暖な気候、良質な水に恵まれた浜名湖のうなぎは、ふっくらとした身と上品な脂のりが特徴。全国のうなぎファンから「味の王様」と称される逸品です。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="features">
+    <h2>3つの特徴</h2>
+    <div class="features">
+      <div class="feature-card">
+        <div class="icon">🏞️</div>
+        <h3>豊かな汽水域</h3>
+        <p>海水と淡水が混ざる浜名湖の環境が、うなぎに程よい締まりと深い旨味を与えます。</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🔥</div>
+        <h3>備長炭の香り</h3>
+        <p>遠州地方の銘木・備長炭でじっくり焼き上げることで、香り高くふわっとした食感に。</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🧂</div>
+        <h3>秘伝のタレ</h3>
+        <p>老舗ごとに受け継がれるタレは、醤油・味醂・砂糖の絶妙なハーモニー。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu">
+    <h2>人気メニュー</h2>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <img src="https://images.unsplash.com/photo-1615361200141-f45040f367be?w=400" alt="うな重" loading="lazy">
+        <div class="info">
+          <h4>うな重</h4>
+          <p>漆器の重箱に盛った定番</p>
+          <div class="price">¥3,800〜</div>
+        </div>
+      </div>
+      <div class="menu-item">
+        <img src="https://images.unsplash.com/photo-1625943553852-781c6dd46faa?w=400" alt="うな丼" loading="lazy">
+        <div class="info">
+          <h4>うな丼</h4>
+          <p>丼ぶりで気軽に楽しむ</p>
+          <div class="price">¥3,200〜</div>
+        </div>
+      </div>
+      <div class="menu-item">
+        <img src="https://images.unsplash.com/photo-1553621042-f6e147245754?w=400" alt="白焼き" loading="lazy">
+        <div class="info">
+          <h4>白焼き</h4>
+          <p>タレなしで素材の味を</p>
+          <div class="price">¥2,800〜</div>
+        </div>
+      </div>
+      <div class="menu-item">
+        <img src="https://images.unsplash.com/photo-1626074353765-517a681e40be?w=400" alt="う巻き" loading="lazy">
+        <div class="info">
+          <h4>う巻き</h4>
+          <p>ふわふわ卵で巻いた逸品</p>
+          <div class="price">¥1,500〜</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="access">
+    <h2>アクセス</h2>
+    <p style="margin-bottom:1rem;">静岡県浜松市・湖西市を中心に、浜名湖周辺には数多くのうなぎ名店が点在しています。</p>
+    <div class="map-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52322.04301844931!2d137.56143138657716!3d34.70893663222396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601b5a106821d2db%3A0x82a3b68b72c71a96!2z5rWm5ZCN5rmWIOa1puWQjeaxliDjgq3jg7Pjg4g!5e0!3m2!1sja!2sjp!4v1680000000000"
+        allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 <strong>浜名湖うなぎ紹介サイト</strong> | This is a demonstration site</p>
+  </footer>
+
+</body>
+</html>
